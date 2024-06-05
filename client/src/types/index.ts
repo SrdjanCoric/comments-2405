@@ -5,6 +5,8 @@ export interface Comment {
   postedAt: number;
 }
 
+export interface NewComment extends Omit<Comment, "id" | "postedAt"> {}
+
 export interface Reply extends Comment {
   comment_id: string;
 }

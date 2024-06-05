@@ -1,0 +1,20 @@
+{
+  "name": "comments_exercise_boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon start-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "json-beautify": "^1.1.1",
+    "nodemon": "^3.1.0",
+    "uuid": "^7.0.3"
+  }
+}

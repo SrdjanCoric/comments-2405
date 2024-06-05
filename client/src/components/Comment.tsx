@@ -1,4 +1,5 @@
 import { Comment as CommentType } from "../types";
+import moment from "moment";
 
 interface CommentsProps extends CommentType {}
 
@@ -11,7 +12,7 @@ const Comment = ({ author, body, postedAt }: CommentsProps) => {
       </div>
       <div className="header">
         <h3 className="author">{author}</h3>
-        <span>{postedAt}</span>
+        <span>{moment(postedAt).fromNow()}</span>
       </div>
       <p>{body}</p>
     </div>
