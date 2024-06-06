@@ -3,9 +3,12 @@ import AddCommentsForm from "./components/AddCommentsForm";
 import Comments from "./components/Comments";
 import { CommentWithReplies, NewComment } from "./types/index.ts";
 import { createComment, getComments, getReplies } from "./services/comments.ts";
+import FourOhFour from "./components/FourOhFour.tsx";
+import { ZodError } from "zod";
 
 function App() {
   const [comments, setComments] = useState<CommentWithReplies[]>([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -13,6 +16,10 @@ function App() {
         const data = await getComments();
         setComments(data);
       } catch (e) {
+        if (e instanceof ZodError) {
+          console.log("Power Rangers");
+        }
+        setError(true);
         console.log(e);
       }
     };
@@ -49,7 +56,9 @@ function App() {
       console.log(e);
     }
   };
-
+  if (error) {
+    return <FourOhFour />;
+  }
   return (
     <div>
       <Comments comments={comments} onMoreReplies={handleMoreReplies} />
