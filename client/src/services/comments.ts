@@ -8,7 +8,6 @@ const replySchema = z.object({
   author: z.string(),
   body: z.string(),
   postedAt: z.number(),
-  likes: z.number(),
 });
 
 const commentSchema = z.object({
