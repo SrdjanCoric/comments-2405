@@ -3,7 +3,6 @@ import App from "./App";
 import * as commentsService from "./services/comments";
 import { Reply, CommentWithReplies } from "./types";
 import userEvent from "@testing-library/user-event";
-import { input } from "@testing-library/user-event/dist/cjs/event/input.js";
 
 vi.mock("./services/comments.ts");
 const mockedCommentService = vi.mocked(commentsService, true);
